@@ -12,6 +12,6 @@ class PrevalidationController extends Controller
     {
         return DB::table('Validation')
             ->where('telephone', $request->GSW_PHONE)
-            ->exists() ? response('Conflict', 409) : response('OK', 200);
+            ->exists() ? response()->json(['GSW_CALL_RESULT' => 49], 409) : response('OK', 200);
     }
 }
